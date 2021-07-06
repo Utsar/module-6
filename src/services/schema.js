@@ -12,13 +12,20 @@ const BlogSchema = new Schema(
       type: String,
       required: true,
     },
-    author: {
-      type: Number,
-      min: 18,
-      max: 65,
-      default: 18,
+    cover: {
+      type: String,
+      required: true,
     },
-    professions: [String],
+    author: {
+      type: Object,
+      propertites: {
+        name: { type: String },
+        avatar: { type: String },
+      },
+    },
+    content: {
+      type: String,
+    },
   },
   {
     timestamps: true,
