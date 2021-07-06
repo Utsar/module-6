@@ -3,7 +3,8 @@ import listEndpoints from "express-list-endpoints";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import usersRoutes from "./services/users/index.js";
+import blogsRouter from "./services/blogs/index.js";
+
 import {
   badRequestErrorHandler,
   notFoundErrorHandler,
@@ -20,7 +21,7 @@ server.use(express.json());
 
 // ****************** ROUTES *******************************
 
-server.use("/users", usersRoutes);
+server.use("/blogs", blogsRouter);
 
 // ****************** ERROR HANDLERS ***********************
 

@@ -2,21 +2,17 @@ import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
 
-const UserSchema = new Schema(
+const BlogSchema = new Schema(
   {
-    name: {
+    category: {
       type: String,
       required: true,
     },
-    surname: {
+    title: {
       type: String,
       required: true,
     },
-    email: {
-      type: String,
-      required: true,
-    },
-    age: {
+    author: {
       type: Number,
       min: 18,
       max: 65,
@@ -25,8 +21,8 @@ const UserSchema = new Schema(
     professions: [String],
   },
   {
-    timestamps: true, // adding createdAt and modifiedAt automatically
+    timestamps: true,
   }
 );
 
-export default model("User", UserSchema); // bounded to "users" collection
+export default model("Blog", BlogSchema);
